@@ -62,6 +62,7 @@ window.onload=function(){
 
     };
     let num5 = document.querySelector('num5');
+    
     let form = document.querySelector("form");
     form.id = "form";
 
@@ -73,5 +74,20 @@ window.onload=function(){
     let footer = document.querySelector('footer');
     footer.className="footer";
 
+    let message = document.getElementsByClassName("message")[0];
+    let email = document.getElementById("email");
+
+
+    form.addEventListener('submit',(e) => {
+        if(email.value===''||email.value==null){
+            e.preventDefault();
+            message.innerHTML = "Please enter a valid email address";
+        }else{
+            e.preventDefault();
+            message.innerHTML="Thank you! Your emaill address "+ email.value +" has been added to our mailing list!";
+        }
+
+
+        })
 
 }
